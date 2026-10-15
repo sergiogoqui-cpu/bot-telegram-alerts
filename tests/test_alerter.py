@@ -70,14 +70,14 @@ def test_duplicates_are_suppressed_then_reported():
 
 
 def test_explicit_key_groups_different_texts():
-    a, t, _ = make()
+    a, _t, _ = make()
     a.send("latency 120ms", key="latency")
     assert a.send("latency 340ms", key="latency").reason == "duplicate"
     assert a.send("other alert").sent
 
 
 def test_rate_limit_drops_excess():
-    a, t, clock = make(max_per_minute=2)
+    a, _t, clock = make(max_per_minute=2)
     assert a.send("a").sent and a.send("b").sent
     assert a.send("c").reason == "rate_limited"
     clock.t += 61
@@ -86,7 +86,7 @@ def test_rate_limit_drops_excess():
 
 
 def test_rate_limit_wait_mode_sleeps_instead_of_dropping():
-    a, t, clock = make(max_per_minute=1, on_limit="wait")
+    a, _t, clock = make(max_per_minute=1, on_limit="wait")
     a.send("a")
     assert a.send("b").sent
     assert clock.sleeps and clock.sleeps[0] == pytest.approx(60)

@@ -1,5 +1,6 @@
 # bot-telegram-alerts
 
+[![CI](https://github.com/sergiogoqui-cpu/bot-telegram-alerts/actions/workflows/ci.yml/badge.svg)](https://github.com/sergiogoqui-cpu/bot-telegram-alerts/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.9%2B-3776AB?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)

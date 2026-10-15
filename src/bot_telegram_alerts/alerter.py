@@ -87,7 +87,7 @@ def _urllib_transport(timeout: float) -> Transport:
             method="POST",
         )
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:  # noqa: S310 - fixed https URL
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
                 return resp.status, json.loads(resp.read() or b"{}")
         except urllib.error.HTTPError as exc:
             try:
