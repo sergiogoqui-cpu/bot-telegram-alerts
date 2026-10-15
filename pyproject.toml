@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bot-telegram-alerts"
+version = "0.1.0"
+description = "Telegram alerts for bots with deduplication, rate limiting, retries and message splitting. Zero dependencies; never leaks the bot token."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "Sergio Gómez" }]
+keywords = ["telegram", "alerts", "notifications", "bot", "monitoring", "rate-limit"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/sergiogoqui-cpu/bot-telegram-alerts"
+Issues = "https://github.com/sergiogoqui-cpu/bot-telegram-alerts/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bot_telegram_alerts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
